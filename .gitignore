@@ -1,0 +1,18 @@
+Debug/
+build/
+_build/
+*.log
+*.bak
+*.o
+*.h5
+~$*
+logs/
+__pycache__/
+.idea/
+
+generatedDOSScripts/
+
+#include only the parts in the python runtime that change after installs
+/Python*
+
+

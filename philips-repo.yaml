@@ -1,0 +1,4 @@
+version: '1'
+export-control-eccn: EAR99
+export-control-sgi: 3
+export-control-rationale: Based on export control screening questionnaire results

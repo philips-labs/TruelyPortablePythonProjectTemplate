@@ -1,0 +1,24 @@
+
+[MESSAGES CONTROL]
+
+# Disable the message, report, category or checker with the given id(s).
+disable=broad-except
+
+
+[BASIC]
+
+# Bad variable names which should always be refused, separated by a comma
+bad-names=foo, bar, baz, toto, tutu, tata, hello, asdf, lumpi
+
+function-rgx=(([a-z_][a-z0-9_]{2,})|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
+
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=FIXME, TODO
+
+
+[DESIGN]
+
+# Maximum number of arguments for function / method
+max-args=8
