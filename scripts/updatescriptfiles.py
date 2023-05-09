@@ -439,9 +439,9 @@ set CALLEDDIR=%~dp0
 :: directory "generatedDOSScripts". This script is produced in that directory
 :: project\project_scripts\generatedDOSScripts; where this file is per default: %~dp0
 set CURRENTDIR=%~dp0
-:: if started elsewhere, set CURRENTDIR to either the aboslute path the project\project_scripts\generatedDOSScripts 
-:: directory or a relative path like in the following, and don't forget that this path must end with a back-slash:
-:: set CURRENTDIR=project\project_scripts\generatedDOSScripts\\
+:: if started elsewhere, set CURRENTDIR to either the absolute path or the relative path to the directory of generatedDOSScripts 
+:: like in the following, and don't forget that this path must end with a double back-slash:
+:: set CURRENTDIR=portable\scripts\generatedDOSScripts\\
 
 """
 
