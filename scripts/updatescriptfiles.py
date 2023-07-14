@@ -144,7 +144,7 @@ def returnsetsPY(dir):
         if os.path.isfile(fulli):
             f, e = os.path.splitext(fulli)
             if e == ".py" and not os.path.basename(f).startswith("_"):
-                pylist.append(f)
+                pylist.append(fulli)
             if i == "__main__.py":
                 pylist.append(dir)
 
@@ -348,10 +348,13 @@ def create_dos_file(do_pytest, generatedScripts, i, ispy=True):
 
     if ispy:
         if do_pytest and modulename.startswith("test_"):
-            f.write('py.test %~dp0{:s}\\{:s}.py  \n'.format(modulepath_rel, modulename))
+            f.write('py.test %~dp0{:s}\\{:s}  \n'.format(modulepath_rel, modulename))
         else:
             f.write("\n::add START /min if the DOS box is to be seen, or /B if there can be no dosbox\n")
-            f.write("{:s} {:s}.py %* \n".format(PYTHONEXE,  modulename))
+            if modulename.endswith(".py"):
+               f.write("{:s} {:s} %* \n".format(PYTHONEXE,  modulename))
+            else:
+                f.write("{:s} -m {:s} %* \n".format(PYTHONEXE, modulename))
     else:
         f.write('jupyter-notebook.exe  {:s}.ipynb\n'.format(modulename))
     f.write("PUSHD %CALLEDDIR%\n")
@@ -421,7 +424,10 @@ def create_sh_file(do_pytest, generatedScripts, i, ispy=True ):
         if do_pytest and modulename.startswith("test_"):
             f.write('py.test {:s}.py  \n'.format(modulename))
         else:
-            f.write('{:s} -m  {:s} {:s} \n'.format(PYTHONEXE, modulename, all ))
+            if modulename.endswith(".py"):
+               f.write("{:s} {:s}\n".format(PYTHONEXE,  modulename, all))
+            else:
+                f.write("{:s} -m {:s}\n".format(PYTHONEXE, modulename, all))
     else:
         f.write('jupyter-notebook  {:s}.ipynb\n'.format(modulename))
     f.write("\n\ncd $START\n")
