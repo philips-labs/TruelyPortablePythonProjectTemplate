@@ -48,15 +48,21 @@ and know that only the target
 **Key Concepts**
 
 * In order to exchange a Python application not only is the application itself needed, but also all of the libraries it depends on. That means that many libraries may have to be installed for a particular application to run. If a user does not want their single Python distribution to be cluttered up, they need to use either a Python Virtual Environment or a user environment which could easily be reset. A third alternative is use a Python distribution per application, realizing that the Python Distribution itself is a fraction of the size of a large application. 
-* Libraries may contain specific DLL’s that have to be placed in specific places in the Python distribution. Other libraries may have version dependencies which may only be met with specific orders of installation and may not work with other libraries already installed. These issues call for one Distribution or Virtual or User environment per application. The downside of a user environment is that it poorly handles DLLs, leaving either separate distribution or virtual environment per application as viable solutions. 
+* Libraries may contain specific DLLï¿½s that have to be placed in specific places in the Python distribution. Other libraries may have version dependencies which may only be met with specific orders of installation and may not work with other libraries already installed. These issues call for one Distribution or Virtual or User environment per application. The downside of a user environment is that it poorly handles DLLs, leaving either separate distribution or virtual environment per application as viable solutions. 
 * In practice, such libraries may not be installable via PIP, and the DLLs may have to reside in the Python distribution. Also, not all Python applications can be reduced to a single exe. These factors imply that the most versatile exchange format for Python is one that includes the Python distribution itself.  The conclusion is that the most certain way to distribute an application is by including the distribution itself. 
 * When distributing an application to a user who is more interested in the application than the language its implemented in, the simple guarantee that it will work, no matter if on a memory stick or placed in the PC is essential. Having to install it, may feel intrusive to the customer or even bring risks that the installation may be unsuccessful. A Python Virtual Environment is not portable, but has to be updated every time its placed in a new location. The only portable solution is delivery with the Python Distribution itself. 
 
 
 ## Dependencies
 
-This project assumes that "git" is installed. Git is used to download
-the latest version pyenv. On linux Os's also the libraries needed to compile
+ This project assumes that "git" is installed. On Windows, there are at least these two:
+ * https://git-scm.com/download/win
+ * https://gitforwindows.org/
+
+On linux git can be downloaded via the command:
+ * apt-get install git
+
+ Git is used to download the latest version pyenv. On linux Os's also the libraries needed to compile
 Python need to be installed, these are described in:
 
 https://github.com/pyenv/pyenv/wiki#suggested-build-environment
@@ -275,7 +281,7 @@ So at the prompt you can issue the command:
 pip install xxx 
 
 ## Installation
-Nothing needs to be “installed”. 
+Nothing needs to be ï¿½installedï¿½. 
 
 ## Usage
 
